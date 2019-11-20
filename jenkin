@@ -1,7 +1,7 @@
 pipeline{
   agent any
   enviroment{
-    name = "Bambo"
+    name = "Bambo-master"
   }
   stages{
     stage('Start'){
