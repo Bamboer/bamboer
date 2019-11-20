@@ -1,13 +1,11 @@
-pipeline{
-  agent any
-  environment{
-    name = "Bambo-master"
-  }
-  stages{
-    stage('Start'){
-      steps{
-      echo "${name}"
-      }
+pipeline {
+    agent { dockerfile true }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+                sh 'svn --version'
+            }
+        }
     }
-  }
 }
