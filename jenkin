@@ -1,11 +1,13 @@
 pipeline{
   agent any
-  enviroment{
+  environment{
     name = "Bambo-dev"
   }
   stages{
     stage('Start'){
+    steps{
       echo "${name}"
     }
+}
   }
 }
