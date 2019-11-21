@@ -1,3 +1,8 @@
-FROM node:7-alpine
+FROM ubuntu:latest
 
-RUN apk add -U subversion
+RUN apt-get update  && \
+    apt-get -y install nginx
+
+EXPOSE 80
+ENTRYPOINT nginx -g "daemon off;"
+
