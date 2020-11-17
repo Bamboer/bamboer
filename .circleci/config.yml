@@ -10,8 +10,7 @@ jobs:
       - checkout
       - run: echo "A first hello"
       - run: mkdir -p my_workspace
-      - run: echo "Trying out workspaces" > my_workspace/echo-output
-      - run: git log -n 2
+      - run: a=(git log -n 1 |grep commit|cut -d' ' -f2);echo ${a:0:7} > my_workspace/echo-output
       - persist_to_workspace:
           # Must be an absolute path, or relative path from working_directory
           root: my_workspace
@@ -32,7 +31,7 @@ jobs:
           at: my_workspace
 
       - run: |
-          if [[ $(cat my_workspace/echo-output) == "Trying out workspaces" ]]; then
+          if [[ -n $(cat my_workspace/echo-output)]]; then
             echo "It worked!";
           else
             echo "Nope!"; exit 1
