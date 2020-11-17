@@ -10,7 +10,7 @@ jobs:
       - checkout
       - run: echo "A first hello"
       - run: mkdir -p my_workspace
-      - run: a=(git log -n 1 |grep commit|cut -d' ' -f2);echo ${a:0:7} > my_workspace/echo-output
+      - run: a=`git log -n 1 |grep commit|cut -d' ' -f2`;echo ${a:0:7} > my_workspace/echo-output
       - persist_to_workspace:
           # Must be an absolute path, or relative path from working_directory
           root: my_workspace
