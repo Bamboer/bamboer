@@ -1,2 +1,2 @@
 # cmdb
-developed by golang
+A CMDB 
