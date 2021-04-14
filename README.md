@@ -1,2 +1,2 @@
-# cmdb
-A CMDB 
+# CMDB
+A distributed cmdb
